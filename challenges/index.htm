@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="email=no" />
+    <title>壹战到底-第四期</title>
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/animate.min.css" />
+</head>
+<body>
+<div class="main">
+<header class="header">
+    <img src="images/index-top.png" alt="" />
+    <div class="Prompt animated bounceInDown"><img src="images/Prompt.png" alt="" /></div>
+</header>
+
+<div class="box">
+    <div class="box-top">
+        <img src="images/box-top-bg.png" alt="" />
+        <div class="box-top-word"><img src="images/word-explain.png" alt="" /></div>
+    </div>
+    <div class="box-content">
+        <div class="welcome">
+            <div class="welcome-key"><img src="images/ico-keys.png" alt="" /></div>
+            <p>亲`欢迎参加壹互联有奖问答活动,好玩有趣娱乐互动奖品多多,累加答题赢取丰富礼品~O(∩_∩)O~</p>
+            <div class="imp-right animated-3s "><img src="images/imp-right.png" alt="" /></div>
+        </div>
+        <div class="rule">
+            <div class="imp-left animated-2s "><img src="images/imp-left.png" alt="" /></div>
+            <div class="rule-word">
+                <p>游戏规则：一共10题；</p>
+                <p>答题时间2分钟；</p>
+                <p>每题10积分。</p>
+                <div class="prize-set"><a href="float.htm"><img src="images/ico-set.png" alt="" /></a></div>
+            </div>                
+            
+        </div>
+        <div class="start"><a href="javascript:void(0)"><img src="images/start.png" alt="" /></a></div>
+    </div>
+    <div class="box-bottom">
+        <img src="images/box-bottom.png" alt="" />
+    </div>
+</div>   
+</div> 
+<footer class="footer">
+    <p>深圳前海壹互联科技投资有限公司</p>
+</footer>
+<div class="ad"><a href="http://shop12345708.koudaitong.com/v2/home/9e1uvews?reft=1446517307042&spm=g141739289&sf=wx_sm&from=groupmessage&isappinstalled=0"><img src="images/ad.png" alt="" /></a></div>
+
+ <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+ <script>
+    $(document).ready(function($) {
+        $(".imp-right").addClass('bounceInRight');
+        $(".imp-left").addClass('rollIn');
+
+        $(".start").on("click",function(){
+            $(".imp-left").removeClass('rollIn');
+            $(".imp-left").addClass('hinge');
+            $(".imp-right").addClass('zoomOutRight');
+           setTimeout("window.location.href='start-before.htm'", 2000);
+
+        });
+
+        var sh = document.documentElement.clientHeight;
+        var dh = $(".ad").height();
+        $(".footer").css({"margin-bottom":dh});
+
+        $(window).resize(function(){
+            var dh = $(".ad").height();
+            $(".footer").css({"margin-bottom":dh});
+        });
+
+    });
+ </script>
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="email=no" />
+    <title>壹战到底-大转盘</title>
+    <link rel="stylesheet" href="css/common.css" />
+</head>
+<body>
+
+<div class="turntable-top"><img src="images/turntable-top.png" alt="" /></div>
+
+<div class="turntable-bg">
+	<div class="turntable-main"><img src="images/turntable-bgs.png" alt="" /></div>
+    <div class="mask"><img src="images/pointer-top.png"/></div>
+    <div class="pointer"><img src="images/pointers.png" alt="pointer"/></div>
+    <div class="rotate" ><img id="rotate" src="images/turntables.png" alt="turntable"/></div>
+</div>
+	
+<footer class="footer">
+    <p>深圳前海壹互联科技投资有限公司</p>
+</footer>
+
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="js/awardRotate.js"></script>
+<script type="text/javascript">
+$(function (){
+
+	var rotateTimeOut = function (){
+		$('#rotate').rotate({
+			angle:0,
+			animateTo:2160,
+			duration:8000,
+			callback:function (){
+				alert('网络超时，请检查您的网络设置！');
+			}
+		});
+	};
+	var bRotate = false;
+
+	var rotateFn = function (awards, angles, txt){
+		bRotate = !bRotate;
+		$('#rotate').stopRotate();
+		$('#rotate').rotate({
+			angle:0,
+			animateTo:angles+1440,
+			duration:8000,
+			callback:function (){
+				alert(txt);
+				bRotate = !bRotate;
+			}
+		})
+	};
+
+	$('.pointer').click(function (){
+
+		if(bRotate)return;
+		var item = rnd(1,6);
+
+		switch (item) {
+
+			case 1:
+
+				rotateFn(1, 30, '百元以内优惠券');
+				break;
+			case 2:
+
+				rotateFn(2, 90, '复合酶喷剂一瓶');
+				break;
+			case 3:
+
+				rotateFn(3, 150, '再玩一次');
+				break;
+			case 4:
+
+				rotateFn(4, 210, '益生菌一盒');
+				break;
+			case 5:
+
+				rotateFn(5, 270, '和遗憾没中奖');
+				break;
+			case 6:
+
+				rotateFn(6, 330, '随机现金红包');
+				break;
+		}
+
+		//console.log(item);
+	});
+});
+function rnd(n, m){
+	return Math.floor(Math.random()*(m-n+1)+n)
+}
+</script>
+
+</body>
+</html>
