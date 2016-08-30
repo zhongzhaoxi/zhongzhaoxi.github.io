@@ -1,0 +1,21 @@
+/* 
+* @Author: zzx
+* @Date:   2016-03-30 10:23:47
+* @Last Modified time: 2016-03-30 10:31:23
+*/
+
+body{background-color:#fff;}
+/*清除浮动*/
+.clearfix:after { content:"\200B"; display:block; height:0; clear:both; } 
+.clearfix {*zoom:1;} 
+
+/*input placeholder属性样式控制*/
+.placeholder input::-webkit-input-placeholder {color:#898989;text-align:center; font-size:0.4rem;}
+
+.hidden{display:none;}
+.show{display:block;}
+.visibility{visibility:hidden;}
+.fl{float:left;}
+.fr{float:right;}
+
+
