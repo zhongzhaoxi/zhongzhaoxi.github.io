@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="email=no" />
+    <meta name="msapplication-tap-highlight" content="no"/>
+    <title>新版定时摇一摇-中奖</title>
+    <script src="layerm/layer.m.js"></script>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/common.css" />
+    <script src="js/adaptive.js"></script>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/TimeCountDown.js"></script>
+    <script src="js/shake.js"></script>
+    <script src="js/common.js"></script>
+</head>
+<body>
+   
+<section class="prize">
+    <div class="prize-header">
+        <img src="images/prize-top.png" alt="" />
+    </div>
+    <div class="prize-content">
+        <div class="prize-content-top">
+            <img src="images/content-top.png" alt="" />
+        </div>
+        <div class="prize-content-main">
+            <div class="prize-face">
+                <img src="images/prize-face.png" alt="" />
+            </div>
+            <div class="prize-img">
+                <img src="images/prize-img.png" alt="" />
+            </div>
+            <div class="prize-form">
+                <div class="prize-form-text">
+                    <p>请认真填写您的信息，方便我们为您寄送奖品！</p>
+                    <p id="prize-form-text"></p>
+                    <div id="inps"></div>
+                </div>
+                <ul>
+                    <li>
+                        <dt><span>姓名:</span></dt>
+                        <dt><input type="text" name="name" /></dt>
+                    </li>
+                    <li>
+                        <dt><span>电话:</span></dt>
+                        <dt><input type="text" name="tel" /></dt>
+                    </li>
+                    <li>
+                        <dt><span>地址:</span></dt>
+                        <dt><input type="text" name="address" /></dt>
+                    </li>
+                    <li>
+
+                    </li>
+                </ul>
+            </div>
+<script>
+// window.onresize = function(){
+//     $(".prize").css({"transform":"translateY("+($(window).scrollTop()-500>0?0:$(window).scrollTop()-500)+"px)"});
+// }
+
+function load (){
+ 
+    document.addEventListener('touchstart',touch,false);
+    document.addEventListener('touchmove',touch,false);
+    document.addEventListener('touchend',touch,false);
+     
+    function touch (event){
+        var event = event || window.event;
+         
+        var oInp = document.getElementById("inp");
+ 
+        switch(event.type){
+            case "touchstart":
+                oInp.innerHTML ="Touch started (" + event.touches[0].clientX +"," + event.touches[0].clientY +")";
+                break;
+            case "touchend":
+                oInp.innerHTML ="<br>Touch end (" + event.changedTouches[0].clientX +"," + event.changedTouches[0].clientY +")";
+                break;
+            case "touchmove":
+                event.preventDefault();
+                oInp.innerHTML ="<br>Touch moved (" + event.touches[0].clientX +"," + event.touches[0].clientY +")";
+                break;
+        }
+         
+    }
+}
+// window.addEventListener('load',load,false);
+
+
+//判断访问终端
+var browser={
+    versions:function(){
+        var u = navigator.userAgent, app = navigator.appVersion;
+        return {
+            trident: u.indexOf('Trident') > -1, //IE内核
+            presto: u.indexOf('Presto') > -1, //opera内核
+            webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+            gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1,//火狐内核
+            mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+            ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+            android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+            iPhone: u.indexOf('iPhone') > -1 , //是否为iPhone或者QQHD浏览器
+            iPad: u.indexOf('iPad') > -1, //是否iPad
+            webApp: u.indexOf('Safari') == -1, //是否web应该程序，没有头部与底部
+            MicroMessenger: u.match(/MicroMessenger/i)
+        };
+    }(),
+    
+}
+
+if(browser.versions.mobile&&browser.versions.android&&browser.versions.MicroMessenger){
+    //alert("安卓移动端微信浏览器");
+    window.onresize = function(){
+            document.getElementById("prize-form-text").innerHTML="安卓移动端微信浏览器"+"高度："+window.innerHeight+"";
+    }
+   $(".prize-form").find("input").focus(function(){
+        document.getElementById("prize-form-text").innerHTML="安卓移动端微信浏览器有软键盘"+"可见区域高度："+document.documentElement.clientHeight +"";
+    });
+}
+
+   
+document.getElementById("prize-form-text").innerHTML="安卓移动端微信浏览器无软键盘"+"高度："+window.innerHeight+"";
+ 
+
+if(browser.versions.mobile&&browser.versions.ios&&browser.versions.MicroMessenger){
+   //alert("ios移动端微信浏览器"); 
+}
+
+
+
+
+$(".prize-form").find("input").focus(function(){
+        
+        if(browser.versions.mobile&&browser.versions.android){
+            //alert("移动端1 安卓");
+           // window.onresize = function(){
+           //      document.getElementById("prize-form-text").innerHTML="宽度："+document.documentElement.clientWidth+"，高度："+document.documentElement.clientHeight;
+           // }
+           // document.getElementById("prize-form-text").innerHTML=" 高度："+document.documentElement.clientHeight; 
+           //  document.getElementById("prize-form-text").innerHTML=" 高度2："+document.body.scrollHeight;
+
+        }
+        if(browser.versions.mobile&&browser.versions.ios){
+            //alert("移动端 ios");
+            // document.getElementById("prize-form-text").innerHTML=" 高度："+document.documentElement.clientHeight;
+        }
+});
+$(".prize-form").find("input").focusout(function(){
+        
+        if(browser.versions.mobile&&browser.versions.android){
+            //alert("移动端2 安卓");
+           // window.onresize = function(){
+           //      document.getElementById("prize-form-text").innerHTML="宽度："+document.documentElement.clientWidth+"，高度："+document.documentElement.clientHeight;
+           // }
+        // document.getElementById("prize-form-text").innerHTML=" 高度："+document.documentElement.clientHeight;
+
+        }
+        if(browser.versions.mobile&&browser.versions.ios){
+            //alert("移动端 ios");
+            // document.getElementById("prize-form-text").innerHTML=" 高度："+document.documentElement.clientHeight;
+        }
+});
+
+</script>
+            <div class="prize-submit">
+                <a href="javascript:void(0)"><img src="images/submit.png" alt="" /></a>
+            </div>
+        </div>
+        <div class="prize-content-bottom">
+            <img src="images/content-bottom.png" alt="" />
+        </div>
+    </div>
+
+</section>
+
+
+
+
+
+</body>
+</html>

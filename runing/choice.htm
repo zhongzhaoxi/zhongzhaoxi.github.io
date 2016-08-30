@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="email=no" />
+    <title>圣诞酷跑-角色选择</title>
+    <link rel="stylesheet" href="css/common.css" />  
+    <script src="js/jquery-2.1.4.min.js" type="text/javascript"></script>  
+</head>
+<body style="background-image:none;background-color:#bcbfc6;">
+   
+<div class="choice">
+    <div class="choice-top"><img src="images/choice-top.png" alt="" /></div>
+    <div class="girl"><a href="#"><img src="images/girl.png" alt="" /></a></div>
+    <div class="boy"><a href="#"><img src="images/boy.png" alt="" /></a></div>
+    <div class="start-start"><a href="run.htm"><img src="images/start-start.png" alt="" /></a></div>
+</div>
+
+
+<script>
+$(document).ready(function(){
+
+    $("body").height($(window).height());
+    $("body").width($(window).width());    
+    $(".choice").height($(window).height());
+    $(".choice").width($(window).width());
+    
+    $(".girl").on("click",function(){
+        $(this).find("img").attr("src","images/girl-click.png");
+        $(".boy").find("img").attr("src","images/boy.png");
+    });
+    $(".boy").on("click",function(){
+        $(this).find("img").attr("src","images/boy-click.png");
+        $(".girl").find("img").attr("src","images/girl.png");
+    });
+
+
+});
+</script>
+</body>
+</html>

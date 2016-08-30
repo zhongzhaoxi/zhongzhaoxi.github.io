@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="email=no" />
+    <title>run-demo</title>
+    <link rel="stylesheet" href="css/common.css" />
+    <script src="js/jquery-2.1.4.min.js" type="text/javascript"></script>
+    <script src="js/common.js" type="text/javascript"></script>
+    <!-- <script src="js/snow.js" type="text/javascript"></script> -->
+</head>
+<body style="overflow: hidden;background-image:none;">
+   
+
+<div class="lockbg"></div>
+<div class="layer"></div>
+   
+<div class="top">
+   
+
+<div class="bottom background-image-bottom">
+    
+    <div class="person-box"></div>
+    
+</div>
+
+<div class="barrier-box" style="display:none;" id="barrier">
+   
+</div>
+
+</div>
+
+<div id="audio_btn" class="off video_exist rotate" style="display: block;">
+    <audio id="media" class="media" loop="" src="js/music.mp3"  autoplay="" preload="auto" ></audio>
+</div>
+
+<style>
+#audio_btn {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 200;
+    display: none;
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+}
+.rotate{
+    -webkit-animation:rotating 1.2s linear infinite;
+    -moz-animation:rotating 1.2s linear infinite;
+    -o-animation:rotating 1.2s linear infinite;
+    animation:rotating 1.2s linear infinite;
+}
+@-webkit-keyframes rotating{
+    from{-webkit-transform:rotate(0deg)}to{-webkit-transform:rotate(360deg)}
+}
+@keyframes rotating{from{
+    transform:rotate(0deg)}to{transform:rotate(360deg)}
+}
+@-moz-keyframes rotating{
+    from{-moz-transform:rotate(0deg)}to{-moz-transform:rotate(360deg)}
+}
+.off{
+    background-image: url(images/normalmusic.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.paused{
+-webkit-animation-play-state:paused;
+}
+</style>
+
+<script>
+    $(document).ready(function(){
+        
+        var o = document.getElementById("media");
+
+        $("#audio_btn").on("click",function(){
+
+                //paused 已经播放的时候返回false 暂停的时候返回true
+                
+                if(o.paused){//暂停状态
+                    o.play();//播放
+                    $(this).removeClass("paused");
+
+                }else{//播放状态
+                    $(this).addClass("paused");
+                    o.pause();//暂停
+                }
+
+        });
+
+    });
+
+</script>
+</body>
+</html>

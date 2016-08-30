@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="email=no" />
+    <meta name="msapplication-tap-highlight" content="no"/>
+    <title>新版定时摇一摇-首页</title>
+    <script src="layerm/layer.m.js"></script>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/common.css" />
+    <script src="js/adaptive.js"></script>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/TimeCountDown.js"></script>
+    <script src="js/shake.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/localStorage.js"></script>
+    
+</head>
+<body>
+
+
+
+<script type="text/javascript">  
+
+    //入口函数  
+    whir.res.pageVersion = "1005";  //页面版本，用于检测是否需要更新缓存  
+
+    whir.res.loadCss("resetcss", "./css/reset.css", null);  
+    whir.res.loadCss("commoncss", "./css/common.css", null); 
+
+    whir.res.loadJs("adaptivejs", "./js/adaptive.js",null);
+    whir.res.loadJs("jquery2.1.4", "./js/jquery-2.1.4.min.js",null);
+    whir.res.loadJs("TimeCountDownjs", "./js/TimeCountDown.js", null); 
+    whir.res.loadJs("shakejs", "./js/shake.js",null);
+    whir.res.loadJs("commonjs", "./js/common.js",null); 
+ 
+</script>  
+
+
+
+<section class="shake">
+    <div class="shake-mian-index">
+        <div class="tips visibility">
+            <p>距离下一次摇奖时间还有</p>
+        </div>
+        <div class="count-down hidden" id="TimeCountDown">
+            <ul>
+                <li><div class="hour">00</div></li>
+                <li><div class="division">:</div></li>
+                <li><div class="mini">00</div></li>
+                <li><div class="division">:</div></li>
+                <li><div class="sec">00</div></li>
+            </ul>
+            <script type="text/javascript">
+                $("#TimeCountDown").fnTimeCountDown("2016/04/01 18:00:00");
+            </script>
+        </div>
+        <div class="start-button-hover hidden">
+            <img src="images/start-hover.png" alt="" />
+        </div>
+        <div class="start-button show">
+            <a href="shake.html"><img src="images/start.png" alt="" /></a>
+        </div>
+
+    </div>
+    <div class="shake-detail">
+        <a href="detail.html"><img src="images/detail.png" alt="" /></a>   
+        <a href="detail-win.html"><img src="images/win-rank.png" alt="" /></a>    
+    </div>    
+
+    
+</section>
+
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="email=no" />
+    <meta name="msapplication-tap-highlight" content="no"/>
+    <title>新版定时摇一摇-详情页面</title>
+    <script src="layerm/layer.m.js"></script>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/common.css" />
+    <script src="js/adaptive.js"></script>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/TimeCountDown.js"></script>
+    <script src="js/shake.js"></script>
+    <script src="js/common.js"></script>
+
+</head>
+<body>
+   
+<section class="detail">
+    <div class="detail-content">
+        <div class="detail-title">
+            <img src="images/win-rank.png" alt="" />
+        </div>
+        <div class="detail-content-top">
+            <img src="images/content-top.png" alt="" />
+        </div>
+        <div class="detail-content-main">
+
+            <div class="detail-mod" style="width:75%;">
+                <div class="detail-mod-title">
+                    <div class="detail-mod-title-fixed">
+                        <ul>
+                            <li>
+                                <dt><p>昵称</p></dt>
+                                <dt><p>电话</p></dt>
+                                <dt><p>奖品</p></dt>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="congratulations-content">
+                        <ul id="list">
+                            <li>
+                                <dt><p>昵称1</p></dt>
+                                <dt><p>13760131556</p></dt>
+                                <dt><p>运动手环</p></dt>
+                            </li>
+                            <li>
+                                <dt><p>昵称2</p></dt>
+                                <dt><p>13760131556</p></dt>
+                                <dt><p>运动手环</p></dt>
+                            </li>
+                            <li>
+                                <dt><p>昵称3</p></dt>
+                                <dt><p>13760131556</p></dt>
+                                <dt><p>运动手环</p></dt>
+                            </li>
+                            <li>
+                                <dt><p>昵称4</p></dt>
+                                <dt><p>13760131556</p></dt>
+                                <dt><p>运动手环</p></dt>
+                            </li>     
+                            <li>
+                                <dt><p>昵称5</p></dt>
+                                <dt><p>13760131556</p></dt>
+                                <dt><p>运动手环</p></dt>
+                            </li>
+                            <li>
+                                <dt><p>昵称6</p></dt>
+                                <dt><p>13760131556</p></dt>
+                                <dt><p>运动手环</p></dt>
+                            </li>
+                            <li>
+                                <dt><p>昵称7</p></dt>
+                                <dt><p>13760131556</p></dt>
+                                <dt><p>运动手环</p></dt>
+                            </li>                      
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                var list = document.getElementById("list");
+                var listheight = list.offsetHeight;
+                    list.innerHTML += list.innerHTML;
+                var timer = null;
+                function move(){
+                    if(parseInt(list.style.top)>-listheight){
+                        list.style.top = parseInt(list.style.top) - 1 + "px";
+                    }else{
+                        list.style.top = 0;
+                    }
+                }
+                timer = setInterval(move, 60);
+            </script>
+            <div class="detail-mod">
+                <div class="detail-mod-title pic3">
+                    <img src="images/title3.png" alt="" />
+                </div>
+                <div class="detail-mod-content">
+                    <ul>
+                        <li>
+                            <dt><img src="images/prize.png" alt="" /></dt>
+                            <dt><span>奖品1111</span></dt>
+                        </li>
+                        <li>
+                            <dt><img src="images/prize.png" alt="" /></dt>
+                            <dt><span>奖品2222</span></dt>
+                        </li>
+                        <li>
+                            <dt><img src="images/prize.png" alt="" /></dt>
+                            <dt><span>奖品3333</span></dt>
+                        </li>
+                        <li>
+                            <dt><img src="images/prize.png" alt="" /></dt>
+                            <dt><span>奖品4444</span></dt>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <div class="detail-content-bottom">
+            <img src="images/content-bottom.png" alt="" />
+        </div>
+    </div>
+
+</section>
+
+</body>
+</html>

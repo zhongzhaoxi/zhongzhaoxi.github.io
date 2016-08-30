@@ -1,0 +1,103 @@
+html { font-size: 62.5%; } 
+body {font-size: 1.2rem; background:#ad0f0c;font: normal Helvetica;}
+@media (min-width:320px) {body {font-size:1.4rem;}}
+body,html,p,h1,h2,h3,h4,h5,h6,dl,dd,dt,ul,li,div,input,button{padding:0px;margin:0px;}
+dl,dt,ul,li{list-style:none;}
+img,object { max-width: 100%;vertical-align:top;border:0;}
+a{text-decoration:none;}
+/*html5*/
+article,aside,dialog,footer,header,section,footer,nav,figure,menu{display:block}
+/*clear float*/
+div:after, ul:after, li:after, dl:after, dt:after {content: ".";display: block;height: 0;clear: both;visibility: hidden;font-size:0;}
+a,button,input,textarea,span,li{
+ -webkit-tap-highlight-color: rgba(0,0,0,0);
+ -webkit-tap-highlight-color: transparent; /* For some Androids */
+}
+/*clear iPhone default input£¬textarea*/
+input[type="text"],input[type="button"], input[type="submit"], input[type="reset"] {
+-webkit-appearance: none;}
+textarea {-webkit-appearance: none;} 
+i,em{font-style:normal;}
+img{width:100%;display:table;margin:0 auto;}
+input,select,textarea{outline:none;}
+
+/*turntable*/
+.turntable{position: relative;width:70%;margin:0 auto;z-index: 3;margin-bottom:-30%;overflow: hidden;padding-top:55%;margin-left:27%;} 
+.turntable-content{position: relative;}
+.turntable .pointer {width:25%;position: absolute;left: 52%;top: 45%;margin-left: -13%;margin-top: -12%;z-index: 8;cursor:pointer;}
+.turntable .rotate {width: 100%;}
+
+/*share*/
+.share-alert-box{position: fixed;top:0px;left: 0;width: 100%;height: 100%;background: url(../images/121.png) no-repeat top center rgba(0,0,0,0.8);background-size: 90% auto;z-index: 9999999999;} 
+
+/*改写layer样式*/
+.layermchild{display:block;}
+
+
+.main{background-image: url(../images/bg.png);background-size:cover;background-repeat: no-repeat;width:100%;height:100%;position:relative;margin:0 auto;}
+.share{position:absolute;top:10px;right:10px;border:1px solid #e54e30;border-radius:12px;cursor:pointer;z-index: 99;}
+.share p,.left p{text-align:center;font-size:1.4rem;color:#fff;padding:5px 15px;}
+.left{position:absolute;top:10px;left:10px;border:1px solid #e54e30;border-radius:12px;cursor:pointer;z-index: 99;}
+.rules{width:50%;margin:0 auto;margin-top:35%;}
+.rules a{display:block;cursor:pointer;}
+.tips{width:95%;margin:0 auto;margin-top:2%;background-image: url(../images/tips-bg.png);background-size:100%;background-repeat:no-repeat;height:50px;line-height:50px;}
+.tips p{text-align:center;font-size:1.2rem;color:#fad801;}
+.footer{width:90%;margin:6% auto;}
+.footer p{text-align:center;font-size:1.4rem;color:#fad801;}
+
+/*float*/
+.float{width:90%;margin:15% auto;background-color:#990300;border-radius:1.2rem;position:relative;cursor: pointer;padding-top:5%;border:2px solid #fcc71e;}
+.float-main{overflow-y: scroll;width:90%;margin:0 auto;margin-bottom:5%;}
+.float span{color:#ff6c00;font-size:1.8rem;margin:2% 0;display:block;font-weight:bold;width:40%;}
+.float p{font-size:1.4rem;line-height: 1.8rem;color:#fcf9cb;}
+.ruless{width:90%;margin:0 auto;padding-top:2%;}
+.remark{width:90%;margin:0 auto;padding-top:2%;margin-bottom:10%;}
+.close{position:absolute;right:-3%;top:-3%;width:10%;cursor:pointer;}
+.layermbox{cursor: pointer;}
+
+/*prize-record*/
+.prize-record{width:90%;margin:0 auto;padding-bottom:10%;padding-top:2%;}
+.prize-record ul{overflow-y:scroll;}
+.prize-record h3{color:#ff8a00;font-size:1.8rem;text-align:center; }
+.prize-record li{line-height:3.0rem;margin-top:5%;}
+.prize-record dt{float:left;}
+.prize-record dt.img{width:20%;}
+.prize-record dt.describe{padding:0 4%;width:52%;}
+.prize-record dt.status{width:20%;float:right;line-height:5.0rem; }
+.prize-record dt.describe span{color:#080809;font-size:1.6rem;font-weight:bold;margin:0;width:100%;}
+.prize-button{width:80%;border-radius:1.2rem;background-color:#ff8a00;margin:0 auto;vertical-align: middle;display: inline-block;}
+.prize-button p{color:#fffeff;text-align:center;font-size:1.4rem;font-weight:bold;}
+.prize-button-disable{width:80%;border-radius:1.2rem;background-color:#949494;margin:0 auto;vertical-align: middle;display: inline-block;}
+.prize-button-disable p{color:#fffeff;text-align:center;font-size:1.4rem;font-weight:bold;}
+
+/*兑奖*/ 
+.exchange-form{width:80%;margin:0 auto;margin-bottom:20%;}
+.exchange-form-info li{padding-top:2%;}
+.exchange-form-info li dt{float:left;}
+.exchange-form-info li dt:nth-child(1){width:30%;text-align:center;}
+.exchange-form-info li dt:nth-child(2){width:70%;}
+.exchange-form-info li dt p{line-height:3.2rem;font-size:1.6rem;color:#7c3200;}
+.exchange-form-info li dt input{line-height:3.2rem;width:95%;border:1px solid #dccca8;background-color:#f0e5d0;border-radius:0.4rem;color:#7c3200;text-align:center;font-size:1.6rem;}
+
+
+
+.prize{width:90%;margin:15% auto;z-index:999;position:relative;max-width:67rem;border-radius:1.2rem;background-color:#fef5e4;-moz-box-shadow:0px 0px 12px #113d5c; -webkit-box-shadow:0px 0px 12px #113d5c; box-shadow:0px 0px 12px #113d5c;border:2px solid #ffdd4c;}
+.prize-win{width:95%;margin:0 auto;padding-top:4%;}
+.prize-win img{width:100%;margin:0 auto;}
+.prize-content{width:95%;position:relative;margin:0 auto;border-radius:1.2rem;background-color:#fef5e4;margin-bottom:10%; }
+.prize-main{width:100%;margin:0 auto;}
+.prize-main p{text-align:left;color:#080809;font-size:1.4rem;line-height:1.8rem;font-weight:bold;}
+.prize-words{padding:4% 0;}
+.prize-img{width:60%;margin:0 auto;max-width:37.2rem;padding-bottom:10%;}
+.prize-img img{width:100%;}
+
+.button{position:absolute;width:100%;left:0;bottom:-5%;}
+.button p{text-align:center;font-size:1.4rem;padding:4% 0;color:#FFF;line-height:1.8rem; }
+.button .button-left{width:40%;float:left;margin-left:5%;}
+.button .button-right{width:40%;float:right;margin-right:5%;}
+
+.result{width:90%;margin:0 auto;background-image:url(../images/result-bg.png);background-size:contain;background-repeat:no-repeat;position:relative;padding-top:25%;background-position:center;}
+.result-close{position:absolute;top:10%;right:0;width:15%;cursor:pointer;}
+.result-tips{display:table;vertical-align:middle;text-align:center;width:90%;margin:0 auto;}
+.result-tips p{line-height:2.2rem;width:70%;margin:0 auto;font-size:1.4rem;font-weight:bold;color:#7c3200;}
+.result-button{width:50%;margin:5% auto;cursor:pointer;margin-bottom:5%;}

@@ -1,0 +1,365 @@
+html { font-size: 62.5%; } 
+body {font-size: 1.2rem; background:#ffffff;font: normal "STHeiti Light [STXihei] ","\5b8b\4f53","Microsoft Yahei","SimHei9ED14F53", Helvetica, Arial, sans-serif;}
+@media (min-width:320px) {body {font-size:1.4rem;}}
+body,html,p,h1,h2,h3,h4,h5,h6,dl,dd,dt,ul,li,div,input,button{padding:0px;margin:0px;}
+dl,dt,ul,li{list-style:none;}
+img,object { max-width: 100%;vertical-align:top;border:0;}
+a{text-decoration:none;}
+/*html5*/
+article,aside,dialog,footer,header,section,footer,nav,figure,menu{display:block}
+/*clear float*/
+div:after, ul:after, li:after, dl:after, dt:after {content: ".";display: block;height: 0;clear: both;visibility: hidden;font-size:0;}
+a,button,input,textarea,span,li{
+ -webkit-tap-highlight-color: rgba(0,0,0,0);
+ -webkit-tap-highlight-color: transparent; /* For some Androids */
+}
+/*clear iPhone default input£¬textarea*/
+input[type="text"],input[type="button"], input[type="submit"], input[type="reset"] {
+-webkit-appearance: none;}
+textarea {-webkit-appearance: none;} 
+i,em{font-style:normal;}
+img{width:100%;display:table;margin:0 auto;}
+body.bg{position: relative;background-image: url(../images/body-bg.png);background-repeat:no-repeat;background-size:cover;}
+
+
+/*index.htm*/
+.index-content{background-image: url(../images/index-content.png);background-repeat:no-repeat;background-size:cover;position: relative;}
+.time{position: absolute;top:49%;width:50%;left:24%;font-size:1.2rem;font-weight:bold;color:#863232;}
+@media(max-width:413px){
+    .time{transform:scale(0.8);-webkit-transform:scale(0.8);width:55%;left:18%;}
+}
+.details{width:33%;display: block;position: absolute;left:25%;top:52%;}
+.start{width:33%;display: block;position: absolute;left:25%;top:60%;}
+
+/*float.htm*/
+.float{margin-bottom:5%;}
+.float-content{background-image:url(../images/float-bg.png);background-size:100%;width:100%;background-repeat: repeat-y;}
+.float-content-main{width:75%;margin:0 auto;padding-bottom:20px;}
+.title{width:50%;padding:2% 0;}
+.float-content-main p{font-size:1.2rem;color:#410605;line-height: 2.2rem;width:90%;margin:0 auto;}
+.start-run{width:60%;margin:0 auto;padding-top:2%;}
+
+/*start-befor.htm*/
+.data{margin-bottom: 20%;}
+.data-content{background-image:url(../images/data-bg.png);background-size:100%;width:100%;background-repeat: repeat-y;}
+.form{width:70%;margin:0 auto;padding:5% 0;}
+.form-tips{line-height: 40px;margin-bottom:2%;}
+.form-tips .bomb{width:29px;height:33px;float:left;}
+.form-tips .bomb img{width:100%;}
+.form-tips span{float:left;color:#810000;font-size:1.6rem;margin-left:10px;}
+.form-tips em{font-size:1.2rem;color:#ea0010;}
+.form-input{width:90%;margin:0 auto;margin-bottom:2%;}
+.form-input input{background-color:#810000;border:1px solid #5a0200;width:100%;height:40px;border-radius:8px;font-size:1.8rem;color:#ffe7c9;text-align:center;}
+.form-confirm{width:50%;margin:4% auto;}
+
+/*choice.htm*/
+.choice{background-image:url(../images/choice-bg.png);background-repeat: no-repeat;background-size:cover;position: relative;}
+.girl{margin:0 auto;}
+.boy{margin:0 auto;}
+.start-start{width:50%;margin:0 auto;padding:5% 0;}
+
+/*exchange.htm*/
+.tips{position: relative;}
+.tips span{position: absolute;top:45%;left:25%;font-size:1.2rem;color:#fff;}
+.mod{background-color:#7f0d22;border-radius:30px;padding:3%;margin:0 auto;margin-top:5%;}
+.prize{width:25%;float:left;margin-right:2%;}
+.exchange-button{width:30%;float:right;}
+.mod .right p{font-size:1.2rem;color:#fff;line-height: 1.6rem;}
+
+/*end.htm*/
+.good{width:50%;margin:0 auto;padding:4% 0;}
+.words{width:50%;margin:2% auto;}
+.words p{font-size:1.6rem;color:#7b0008;text-align:center;font-weight:bold;line-height: 2.2rem;}
+.end-button{width:75%;margin:0 auto;padding:4% 0;}
+.exchange-integral{width:49%;float:left;}
+.end-start{width:49%;float:right;}
+
+
+
+/*run.htm*/
+.lockbg {
+    background-color:#000000;
+    display: none;
+    left: 0;
+    opacity: 0.6;
+    position: fixed;
+    top: 0;
+    z-index: 998;
+}
+.top{
+    position: absolute;
+    width:100%;
+    height:800px;
+    background-image:url(../images/bg.png);
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+.bottom{
+    position: absolute;
+    width:100%;
+    height:800px;
+    background-image:url(../images/content-bg.png);
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+/*layer层*/
+.layer{background-color:rgba(255,255,255,0.5);width:87.5%;position:absolute;z-index:999;border:1px solid #ff6000;border-radius:12px;left:6%;top:40px;display: none;}
+
+.question-mod{padding-top:4%;width:90%;margin:2% auto;position: relative;}
+.hat{width:15%;position: absolute;right:-8%;top:-9%;}
+.leaf{width:15%;position: absolute;left:-8%;bottom:-9%;}
+.input{width:100%;}
+.confirm{width:48%;float:right;}
+.not-confirm{width:48%;float:left;}
+.answer-bottom{width:90%;margin:4% auto;}
+
+.ask{margin-top:2%;width:100%;margin:0 auto;margin-top:2%;}
+.ask p{font-size:1.8rem;line-height: 2.4rem;display: inline-block;padding-left:0.4rem;color:#000000;}
+.answer{width:90%;margin:2% auto;margin-bottom:8%;}
+.answer li{line-height: 34px;width:100%;float:left;margin-top:4%;display: block;}
+.answer dt.L{width:14%;float:left;}
+.answer dt.R{width:82%;float:right;}
+.answer dt{display:table-cell;line-height: 34px;vertical-align: middle;}
+.answer dt input{vertical-align: top;margin:0 auto;}
+.answer dt .value{font-size:1.8rem;line-height: 3.4rem;vertical-align: middle;}
+
+/*input*/
+.option-input {-webkit-appearance: none;-moz-appearance: none;-ms-appearance: none;-o-appearance: none;appearance: none;position: relative;top:2px;width: 30px;height: 30px;-webkit-transition: all 0.15s ease-out 0;-moz-transition: all 0.15s ease-out 0;transition: all 0.15s ease-out 0;background: #45b9ed;border: 6px solid #45b9ed;color: #242424;cursor: pointer;display: inline-block;outline: none;position: relative;margin-right: 0.5rem;z-index: 800;}
+.option-input:hover {background: #FFE785;}
+.option-input:checked {background: #242424;}
+.option-input:checked::before{width: 30px;height: 30px;position: absolute;/*content: '\2713';*/display: inline-block;font-size: 26.66667px;text-align: center;line-height: 30px;}
+.option-input:checked::after{background: #242424;content: '';display: block;position: relative;z-index: 100;}
+.option-input.radio {border-radius: 50%;}
+.option-input.radio::after {border-radius: 50%;}
+
+
+/*运动的人*/
+
+/*男孩*/
+.run-man{
+    position: absolute;
+    width: 150px;
+    height: 245px;
+    bottom: 24%;
+    left:5%;
+    background-image: url(../images/run-man.png);
+    background-repeat:no-repeat;
+    background-size:cover;
+    -webkit-animation-iteration-count: infinite;/* 动画无限播放 */
+    -webkit-animation-timing-function: step-start;/* 马上跳到动画每一结束桢的状态 */
+    -webkit-animation-name: run-man;/*动画名称*/
+    -webkit-animation-duration: 1700ms;/*动画执行时间*/  
+}
+@-webkit-keyframes run-man{
+    0% {background-position: 0 0;}
+    12.5% {background-position: -150px 0;}
+    25.0% {background-position: -300px 0;}
+    37.5% {background-position: -450px 0;}
+    50.0% {background-position: -600px 0;}
+    62.5% {background-position: -750px 0;}
+    75.0% {background-position: -900px 0;}
+    87.5% {background-position: -1050px 0;}
+    100% {background-position: 0 0;}
+}
+
+/*女孩*/
+.run-girl{
+    position: absolute;
+    width: 150px;
+    height: 245px;
+    bottom: 24%;
+    left:5%;
+    background-image: url(../images/run-girl.png);
+    background-repeat:no-repeat;
+    background-size:cover;
+    -webkit-animation-iteration-count: infinite;/* 动画无限播放 */
+    -webkit-animation-timing-function: step-start;/* 马上跳到动画每一结束桢的状态 */  
+    -webkit-animation-name: run-girl;/*动画名称*/
+    -webkit-animation-duration: 1700ms;/*动画执行时间*/
+}
+@-webkit-keyframes run-girl{
+    0% {background-position: 0 0;}
+    12.5% {background-position: -150px 0;}
+    25.0% {background-position: -300px 0;}
+    37.5% {background-position: -450px 0;}
+    50.0% {background-position: -600px 0;}
+    62.5% {background-position: -750px 0;}
+    75.0% {background-position: -900px 0;}
+    87.5% {background-position: -1050px 0;}
+    100% {background-position: 0 0;}
+}
+
+
+
+
+/* 暂停动画 */
+.paused{
+-webkit-animation-play-state:paused;
+}
+
+
+/*场景动画*/
+.background-image-bottom{ 
+    -webkit-animation-name: background;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: step-start;
+    -webkit-animation-duration: 6500ms;
+}
+@-webkit-keyframes background{
+    0% {background-position: 0 0;}
+    2.5% {background-position: -60px 0;}
+    5% {background-position: -120px 0;}
+    7.5% {background-position: -180px 0;}
+    10% {background-position: -240px 0;}
+    12.5% {background-position: -300px 0;}
+    15% {background-position: -360px 0;}
+    17.5% {background-position: -420px 0;}
+    20% {background-position: -480px 0;}
+    22.5% {background-position: -540px 0;}
+    25% {background-position: -600px 0;}
+    27.5% {background-position: -660px 0;}
+    30% {background-position: -720px 0;}
+    32.5% {background-position: -780px 0;}
+    35% {background-position: -840px 0;}
+    37.5% {background-position: -900px 0;}
+    40% {background-position: -960px 0;}
+    42.5% {background-position: -1020px 0;}
+    45% {background-position: -1080px 0;}
+    47.5% {background-position: -1140px 0;}
+    50% {background-position: -1200px 0;}
+    52.5% {background-position: -1260px 0;}
+    55% {background-position: -1320px 0;}
+    57.5% {background-position: -1380px 0;}
+    60% {background-position: -1440px 0;}
+    62.5% {background-position: -1500px 0;}
+    65% {background-position: -1560px 0;}
+    67.5% {background-position: -1620px 0;}
+    70% {background-position: -1680px 0;}
+    72.5% {background-position: -1740px 0;}
+    75% {background-position: -1800px 0;}
+    77.5% {background-position: -1860px 0;}
+    80% {background-position: -1920px 0;}
+    82.5% {background-position: -1980px 0;}
+    85% {background-position: -2040px 0;}
+    87.5% {background-position: -2100px 0;}
+    90% {background-position: -2160px 0;}
+    92.5% {background-position: -2220px 0;}
+    95% {background-position: -2280px 0;}  
+    97.5% {background-position: -2340px 0;}  
+    100% {background-position: 0 0;}
+}
+
+/*障碍物*/
+
+/*大蓝星人*/
+.extra-terrestrial-big{
+    position: absolute;
+    right:0;
+    bottom:22%;
+    width: 125px;
+    height: 301px;
+    background-image:url(../images/extra-terrestrial-big.png);
+    background-repeat:no-repeat;
+    background-size:cover;
+    -webkit-animation-iteration-count: infinite;/* 动画无限播放 */
+    -webkit-animation-timing-function: step-start;/* 马上跳到动画每一结束桢的状态 */
+    -webkit-animation-name: extra-terrestrial-big;/*动画名称*/
+    -webkit-animation-duration: 1700ms;/*动画执行时间*/
+}
+@-webkit-keyframes extra-terrestrial-big{
+    0% {background-position: 0 0;}
+    20% {background-position: -125px 0;}
+    40% {background-position: -250px 0;}
+    60% {background-position: -375px 0;}
+    80% {background-position: -500px 0;}
+    100% {background-position: 0 0;}
+}
+
+/*小蓝星人*/
+.extra-terrestrial-sm{
+    position: absolute;
+    right:0;
+    bottom:16%;
+    width: 125px;
+    height: 301px;
+    background-image:url(../images/extra-terrestrial-sm.png);
+    background-repeat:no-repeat;
+    background-size:cover;
+    -webkit-animation-iteration-count: infinite;/* 动画无限播放 */
+    -webkit-animation-timing-function: step-start;/* 马上跳到动画每一结束桢的状态 */
+    -webkit-animation-name: extra-terrestrial-sm;/*动画名称*/
+    -webkit-animation-duration: 1700ms;/*动画执行时间*/
+}
+@-webkit-keyframes extra-terrestrial-sm{
+    0% {background-position: 0 0;}
+    9% {background-position: -125px 0;}
+    18% {background-position: -250px 0;}
+    27% {background-position: -375px 0;}
+    36% {background-position: -500px 0;}
+    45% {background-position: -625px 0;}
+    54% {background-position: -750px 0;}
+    63% {background-position: -875px 0;}
+    72% {background-position: -1000px 0;}
+    81% {background-position: -1125px 0;}
+    90% {background-position: -1250px 0;}
+    99% {background-position: -1375px 0;}
+    100% {background-position: 0 0;}
+}
+
+/*大黑鬼*/
+.ghost-big{
+    position: absolute;
+    right:0;
+    bottom:24%;
+    width: 125px;
+    height: 220px;
+    background-image:url(../images/ghost-big.png);
+    background-repeat:no-repeat;
+    background-size:cover;
+    -webkit-animation-iteration-count: infinite;/* 动画无限播放 */
+    -webkit-animation-timing-function: step-start;/* 马上跳到动画每一结束桢的状态 */
+    -webkit-animation-name: extra-terrestrial-big;/*动画名称*/
+    -webkit-animation-duration: 1700ms;/*动画执行时间*/
+}
+@-webkit-keyframes ghost-big{
+    0% {background-position: 0 0;}
+    11% {background-position: -125px 0;}
+    22% {background-position: -250px 0;}
+    33% {background-position: -375px 0;}
+    44% {background-position: -500px 0;}
+    55% {background-position: -625px 0;}
+    66% {background-position: -750px 0;}
+    77% {background-position: -875px 0;}
+    88% {background-position: -1000px 0;}
+    100% {background-position: 0 0;}
+}
+/*小黑鬼*/
+.ghost-sm{
+    position: absolute;
+    right:0;
+    bottom:21%;
+    width: 125px;
+    height: 301px;
+    background-image:url(../images/ghost-sm.png);
+    background-repeat:no-repeat;
+    background-size:cover;
+    -webkit-animation-iteration-count: infinite;/* 动画无限播放 */
+    -webkit-animation-timing-function: step-start;/* 马上跳到动画每一结束桢的状态 */
+    -webkit-animation-name: extra-terrestrial-sm;/*动画名称*/
+    -webkit-animation-duration: 1500ms;/*动画执行时间*/
+}
+@-webkit-keyframes ghost-sm{
+    0% {background-position: 0 0;}
+    9% {background-position: -125px 0;}
+    18% {background-position: -250px 0;}
+    27% {background-position: -375px 0;}
+    36% {background-position: -500px 0;}
+    45% {background-position: -625px 0;}
+    54% {background-position: -750px 0;}
+    63% {background-position: -875px 0;}
+    72% {background-position: -1000px 0;}
+    81% {background-position: -1125px 0;}
+    90% {background-position: -1250px 0;}
+    99% {background-position: -1375px 0;}
+    100% {background-position: 0 0;}
+}

@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="email=no" />
+    <title>新年大转盘活动</title>
+    <script src="layerm/layer.m.js"></script>
+    <link rel="stylesheet" href="css/common.css" />
+
+</head>
+<body>
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="js/awardRotate.js"></script>
+<script type="text/javascript">
+$(function (){
+
+    function initBody(){
+        // body宽高
+        var $main = $(".main");
+        var w = document.body.clientWidth;   
+        var h = document.documentElement.clientHeight;   
+
+        if(w>h){
+            $main.width(h);
+            $main.height(w);
+        }else{
+            $main.width(w);
+            $main.height(h);
+        }
+    }
+
+    //初始化页面
+    initBody();
+
+    function alertmsg(msg){
+
+      layer.open({
+          content:msg,
+          style: 'background-color:#fff; color:#000; border:none;margin:0 auto;width:50%;',
+          time: 2
+      });
+
+    }
+
+    function alertcon(con){
+
+        layer.open({
+            type: 1,
+            content:con,
+            shadeClose:false
+        })
+
+    }
+
+    var rotateTimeOut = function (){
+        $('#rotate').rotate({
+            angle:0,
+            animateTo:2160,
+            duration:8000,
+            callback:function (){
+                alert('网络超时，请检查您的网络设置！');
+            }
+        });
+    };
+    var bRotate = false;
+
+    var rotateFn = function (awards, angles, txt){
+        bRotate = !bRotate;
+        $('#rotate').stopRotate();
+        $('#rotate').rotate({
+            angle:0,
+            animateTo:angles+1800,
+            duration:8000,
+            callback:function (){
+
+                // 转盘返回结果后的操作
+                // WinPrize();
+                //AgainShare();
+                NotWinPrize();
+
+                bRotate = !bRotate;
+            }
+        })
+    };
+
+    $('.pointer').click(function (){
+
+        if(bRotate)return;
+        var item = rnd(1,6);
+
+        switch (item) {
+
+            case 1:
+
+                rotateFn(1, 30, 'iphone 6s');
+                break;
+            case 2:
+
+                rotateFn(2, 90, '钥匙扣或手机支架');
+                break;
+            case 3:
+
+                rotateFn(3, 150, '祝你好运！');
+                break;
+            case 4:
+
+                rotateFn(4, 210, '皮肤保健品');
+                break;
+            case 5:
+
+                rotateFn(5, 270, '再转一次！');
+                break;
+            case 6:
+
+                rotateFn(6, 330, 'apple watch');
+                break;
+        }
+
+    });
+
+
+   //重新laym遮罩层事件
+   $(document).on("click",".laymshade",function(){
+                     
+        layer.closeAll();
+
+   }); 
+   // 点击分享朋友圈
+   $(document).on("click",".share",function(){
+
+       Share();
+       
+   });  
+   // 分享按钮
+   function Share() {
+       var str = '<div class="share-alert-box"></div>';
+       $('body').append(str);
+       $('.share-alert-box').on('click', function () {
+           $('.share-alert-box').remove();
+           layer.closeAll();
+       })
+   }
+
+    //关闭layer弹出层
+    $(document).on("click",".close,.result-close",function(){
+
+        layer.closeAll();
+
+    });
+
+    //游戏规则
+    $(document).on("click",".rules",function(){
+
+        Rules();
+        
+    }); 
+
+    //显示中奖记录
+    $(document).on("click",".left",function(){
+
+        WinRecord();
+
+    });
+
+    //活动规则
+    function Rules(){
+        var g ='';
+            g += '<div class="float">';
+            g += '<div class="close"><img src="images/close.png" alt="" /></div>';
+            g += '<div class="float-main">';
+            g += '<div class="ruless">';
+            g += '<span><img src="images/time.png" alt=""></span>';
+            g += '<p>2016年1月27号-2016年2月3号</p>';
+            g += '<p>活动流程：</p>';
+            g += '<p>1、 进入大转盘活动说明；</p>';
+            g += '<p>2、 开玩幸运大转盘；</p>';
+            g += '<p>3、 结束后中奖者填写用户信息领取奖品；</p>';
+            g += '<p>4、 成功提交后分享活动。</p>';
+            g += '</div> ';
+            g += '<div class="ruless">';
+            g += '<span><img src="images/rules.png" alt=""></span>';
+            g += '<p>1、 每个微信ID可以玩三次（不包含本身的奖项“再玩一次”）；</p>';
+            g += '<p>2、 每个ID相同的奖品只能领取一次。</p>';
+            g += '<p>奖品设置：</p>';
+            g += '<p>1、一等奖   Iphone 6S      两部 </p>';
+            g += '<p>2、二等奖   Apple Watch     六只</p>';
+            g += '<p>3、三等奖    皮肤日用保健品     限量 </p>';
+            g += '<p>4、四等奖     钥匙扣或手机支架     不限</p>';
+            g += '</div> ';
+            g += '<div class="remark">';
+            g += '<span><img src="images/prize.png" alt=""></span>';
+            g += '<p>由于春节假期缘故，转盘活动结束后的一个月内发放奖品，无特殊原因将在春节后就会发出。</p>';
+            g += '<p>备注：</p>';
+            g += '<p>1、 在医互联的前期活动中因为粉丝个人原因资料填写不完整导致奖品无法派发，请中奖的粉丝正确填写个人信息以便派送礼品。</p>';
+            g += '<p>2、 奖品的颜色和款式以实际收货为准。</p>';
+            g += '<p>3、本活动最终解释权归深圳前海壹互联科技投资有限公司所有。</p>';
+            g += '</div>'; 
+            g += '</div>'; 
+            g += '</div>';
+
+            alertcon(g);
+
+            //超过一定高度出现滚动条
+            var $box = $(".float-main");
+                $box.height(0.7*(document.documentElement.clientHeight));
+    }
+
+    //中奖记录
+    function WinRecord(){
+        var g ='';    
+            g += '<div class="float">';
+            g += '<div class="close"><img src="images/close.png" alt="" /></div>';
+            g += '<div class="prize-record">';
+            g += '<h3>中奖记录</h3>';
+            g += '<ul>';
+            g += '<li>';
+            g += '<dt class="img"><img src="images/iphone-sm.jpg" alt="" /></dt>';
+            g += '<dt class="describe"><span>iphone 6s</span><p>玫瑰金16G</p></dt>';
+            g += '<dt class="status"><div class="prize-button"><p>领取</p></div></dt>';
+            g += '</li>';       
+            g += '<li>';
+            g += '<dt class="img"><img src="images/iphone-sm.jpg" alt="" /></dt>';
+            g += '<dt class="describe"><span>iphone 6s</span><p>玫瑰金16G</p></dt>';
+            g += '<dt class="status"><div class="prize-button-disable"><p>已领取</p></div></dt>';
+            g += '</li>';
+            g += '<li>';
+            g += '<dt class="img"><img src="images/iphone-sm.jpg" alt="" /></dt>';
+            g += '<dt class="describe"><span>iphone 6s</span><p>玫瑰金16G</p></dt>';
+            g += '<dt class="status"><div class="prize-button"><p>领取</p></div></dt>';
+            g += '</li>';
+            g += '<li>';
+            g += '<dt class="img"><img src="images/iphone-sm.jpg" alt="" /></dt>';
+            g += '<dt class="describe"><span>iphone 6s</span><p>玫瑰金16G</p></dt>';
+            g += '<dt class="status"><div class="prize-button"><p>领取</p></div></dt>';
+            g += '</li>';
+            g += '<li>';
+            g += '<dt class="img"><img src="images/iphone-sm.jpg" alt="" /></dt>';
+            g += '<dt class="describe"><span>iphone 6s</span><p>玫瑰金16G</p></dt>';
+            g += '<dt class="status"><div class="prize-button"><p>领取</p></div></dt>';
+            g += '</li>';
+            g += '</ul>';
+            g += '</div>';
+            g += '</div>';
+
+            alertcon(g);
+
+            $(".prize-button").on("click",function(){
+
+                layer.closeAll();
+                ExchangeInfos();    // 点击兑换奖品 填写信息
+
+            });
+            //超过一定高度出现滚动条
+            var $container= $(".prize-record ul");
+            var $liheight = $container.find("li").height();
+                $container.height($liheight*5);
+
+
+    }
+    // 点击兑换奖品 填写信息
+    function ExchangeInfos(){
+
+    var g ='';
+        g +='<div class="prize">';
+        g +='<div class="prize-content">';
+        g +='<div class="prize-main">';
+        g +='<div class="prize-words">';
+        g +='<p><img src="images/prize-tips.png" alt=""></p>';
+        g +='</div>';
+        g +='<div class="exchange-form">';
+        g +='<div class="exchange-form-info">';
+        g +='<ul>';
+        g +='<li>';
+        g +='<dt><p>姓名</p></dt>';
+        g +='<dt><input type="text" name="name" /></dt>';
+        g +='</li>';
+        g +='<li>';
+        g +='<dt><p>手机号</p></dt>';
+        g +='<dt><input type="text" name="tel"/></dt>';
+        g +='</li>';
+        g +='<li>';
+        g +='<dt><p>收货地址</p></dt>';
+        g +='<dt><input type="text" name="tel"/></dt>';
+        g +='</li>';
+        g +='</ul>';
+        g +='</div>';
+        g +='</div>';
+        g +='</div>';
+        g +='<div class="button">';
+        g +='<div class="button-left"><p><img src="images/return.png" alt=""></p></div>';
+        g +='<div class="button-right"><p><img src="images/submit.png" alt=""></p></div>';
+        g +='</div>';
+        g +='</div>';
+        g +='</div>';
+ 
+        alertcon(g);
+
+        // 点击提交
+        $(".button-right").on("click", function() {
+
+            var name = $("input[name='name']").val();  
+            if (name=='' || name==null || name==undefined){
+                alert('姓名不能为空');
+                return false;
+            };
+            var tel = $("input[name='tel']").val();
+            if (tel=='' || tel==null || tel==undefined){
+                alert('电话不能为空');
+                return false;
+            }else{
+                if(!(/^1[3|5|4|7|8][0-9]\d{4,8}$/.test(tel))){                   
+                    alert('手机号码格式不对');
+                    return false;
+                }
+            }
+            // ajax提交后台
+            //后台验证完成后 返回ish5shake = false;//可以继续摇一摇
+        });
+        //点击返回
+        $(".button-left").on("click",function(){
+            layer.closeAll();
+
+        });
+
+
+    }
+
+    // 中奖提示 中奖
+    function WinPrize(){
+        var g ='';
+            g +='<div class="result">';
+            g +='<div class="result-close"><img src="images/closes.png" alt="" /></div>';
+            g +='<div class="result-tips">';
+            g +='<p>恭喜您</p>';
+            g +='<p>抽中日用保健品一只</p>';
+            g +='</div>';
+            g +='<div class="result-button">';
+            g +='<img src="images/get.png" alt="" />';
+            g +='</div>';
+            g +='</div>';
+
+            alertcon(g);
+            //点击底部按钮后的操作
+            $(".result-button").on("click",function(){
+
+                layer.closeAll();
+
+            });
+
+
+    }
+    // 中奖提示 未中奖
+    function NotWinPrize(){
+        var g ='';
+            g +='<div class="result">';
+            g +='<div class="result-close"><img src="images/closes.png" alt="" /></div>';
+            g +='<div class="result-tips">';
+            g +='<p>SORRY!</p>';
+            g +='<p>在抽一次,幸运女神一定会眷顾你的。</p>';
+            g +='</div>';
+            g +='<div class="result-button">';
+            g +='<img src="images/again.png" alt="" />';
+            g +='</div>';
+            g +='</div>';
+
+            alertcon(g);
+            //点击底部按钮后的操作
+            $(".result-button").on("click",function(){
+
+                layer.closeAll();
+
+            });
+
+
+    }
+    // 中奖提示 再分享一次
+    function AgainShare(){
+        var g ='';
+            g +='<div class="result">';
+            g +='<div class="result-close"><img src="images/closes.png" alt="" /></div>';
+            g +='<div class="result-tips">';
+            g +='<p>还想玩吗？</p>';
+            g +='<p>分享朋友圈再抽一次~</p>';
+            g +='</div>';
+            g +='<div class="result-button">';
+            g +='<img src="images/share.png" alt="" />';
+            g +='</div>';
+            g +='</div>';
+
+            alertcon(g);
+            //点击底部按钮后的操作
+            $(".result-button").on("click",function(){
+
+                Share();
+
+            });
+
+
+    }
+
+
+
+});
+
+function rnd(n, m){
+    return Math.floor(Math.random()*(m-n+1)+n)
+}
+
+</script>
+
+<div class="main">
+    
+<div class="share">
+    <p>分享</p>
+</div>
+<div class="left" id="">
+    <p>中奖记录</p>
+</div>
+
+<div class="turntable">
+    <div class="turntable-content">
+        <div class="pointer"><img src="images/pointers.png" alt="pointer"/></div>
+        <div class="rotate"><img id="rotate" src="images/turntable.png" alt="turntable"/></div>
+    </div>
+</div>
+
+<div class="rules">
+    <a href="#"><img src="images/button.png" alt="" /></a>
+</div>
+
+<div class="tips">
+    <p>XXX 您有三次抽奖滴机会~~IPHONE6S到我怀里来~</p>
+</div>
+
+<div class="footer">
+    <p>深圳前海壹互联科技投资有限公司</p>
+</div>
+
+
+
+</div>
+
+
+
+</body>
+</html>

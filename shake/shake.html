@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="email=no" />
+    <meta name="msapplication-tap-highlight" content="no"/>
+    <title>新版定时摇一摇-摇一摇</title>
+    <script src="layerm/layer.m.js"></script>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/common.css" />
+    <script src="js/adaptive.js"></script>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/TimeCountDown.js"></script>
+    <script src="js/shake.js"></script>
+    <script src="js/common.js"></script>
+</head>
+<body>
+   
+<section class="shake">
+    <div class="shake-mian">
+        <div class="hand"><img src="images/hand.png" alt="" /></div>
+    </div>
+    <div class="shake-detail">
+        <a href="detail.html"><img src="images/detail.png" alt="" /></a>
+        <a href="detail-win.html"><img src="images/win-rank.png" alt="" /></a>
+    </div>
+</section>
+
+<!-- 声音 -->
+<div class="sound hidden">
+    <audio id="audio1" src="js/shake_sound_male.mp3" preload="auto"></audio>
+    <audio id="audio2" src="js/shake_match.mp3" preload="auto"></audio>
+</div>
+
+</body>
+</html>
