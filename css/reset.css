@@ -1,7 +1,7 @@
 /* 
 * @Author: zzx
 * @Date:   2016-03-30 10:23:47
-* @Last Modified time: 2016-04-26 18:02:26
+* @Last Modified time: 2016-09-02 10:40:40
 */
 
 html {font-size: 62.5%;} 
@@ -24,4 +24,6 @@ i,em{font-style:normal;}
 img{width:100%;display:table;margin:0 auto;}
 input,select,textarea{outline:none;}
 
+body,button,input,select,textarea {font-family:Tahoma,Arial,Roboto,”Droid Sans”,”Helvetica Neue”,”Droid Sans Fallback”,”Heiti SC”,sans-self;font-size:62.5%; line-height:1.5;}
+html,body{ width:100%; height:100%; overflow:hidden;}
 

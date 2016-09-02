@@ -1,27 +1,71 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<title>zhongzhaoxi works show</title>
-<meta name="description" content="">
-<meta name="keywords" content="">
-
-<link rel="stylesheet" href="css/reset.css" />
-<link rel="stylesheet" href="css/common.css" />
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+	<meta name="renderer" content="webkit">
+	<title>zhongzhaoxi个人项目展示</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/common.css" />
+	<!--[if lte IE 8]>
+	<style type="text/css">
+		html,body{width:100%; height:100%; overflow:scroll}
+		.section-btn{display:none;}
+	</style>
+	<![endif]-->
 </head>
 <body>
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+	<section class="section-wrap">
+		<div class="section section-1">
+			<div class="title active">
+				<p class="tit">一个web前端的自述</p>
+			</div>
+            <div class="autotype" id="autotype">
+                <p>一场雨把我困在这里</p>
+                <p>你温柔的表情</p>
+                <p>会让我伤心</p>
+                <p>六月的雨，只是无情的你~</p>
+            </div>
+		</div>
+		<div class="section section-2">
+			<div class="title">
+				<p class="tit">2016年</p>
+			</div>
+		</div>
+		<div class="section section-3">
+			<div class="title">
+				<p class="tit">2015年</p>
+			</div>
+		</div>
+		<div class="section section-4">
+			<div class="title">
+				<p class="tit">2014年</p>
+			</div>
+		</div>
+		<div class="section section-5">
+			<div class="title">
+				<p class="tit">2013年</p>
+			</div>
+		</div>
+	</section>
+	<ul class="section-btn">
+	  <li class="on"></li>
+	  <li></li>
+	  <li></li>
+	  <li></li>
+	  <li></li>
+	</ul>
+	<div class="arrow">&laquo;</div>
 
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="js/mousewheel.js"></script>
+<script type="text/javascript" src="js/autotype.js"></script>
+<script>
 
-<div class="works-show">
-    <a href="shake/index.html">摇一摇</a>
-    <a href="runing/index.htm">圣诞酷跑</a>
-    <a href="challenge/index.htm">壹战到底</a>
-    <a href="turntable/index.htm">幸运大转盘</a>
-    <a href="vote/index.htm">投票活动</a>
-</div>
-
+    $(document).ready(function(){
+        $("#autotype").autotype();
+    });
+    
+</script>
 </body>
 </html>
-        
